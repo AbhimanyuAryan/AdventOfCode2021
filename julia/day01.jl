@@ -11,11 +11,8 @@ println(
   count(i -> i > 0, diff(input))
 )
 
-println("Total Sum: ", 
-  sum(1:length(input)-1) do i
-    input[i+1] > input[i]
-  end
-)
-
 # second solution
 
+println(sum(1:length(input)-3) do i
+  sum(input[i: i+3]) > sum(input[i: i+2])
+end )
